@@ -1,0 +1,29 @@
+cp .env.example .env
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env.local
+
+docker compose up -d
+npm install
+
+
+Teminal 3
+npm run db:seed
+Hoặc (Nếu lỗi)
+npx ts-node -r reflect-metadata -r tsconfig-paths/register -P apps/api/tsconfig.json apps/api/src/seed.ts
+
+Teminal 1
+npm run dev:api
+Xóa cache Next.js:
+Remove-Item -Recurse -Force apps\web\.next
+
+Teminal 2
+npm run dev:web
+
+Ctrl + C Để dừng web nếu cần Rồi chạy:
+Remove-Item -Recurse -Force apps\web\.next
+npm run dev:web
+
+
+http://localhost:3000
+
+http://localhost:3000/khach/thuc-don?ban=B02

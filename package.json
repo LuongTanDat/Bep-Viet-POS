@@ -1,0 +1,24 @@
+{
+  "name": "bep-viet-pos",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @bepviet/api & npm run dev -w @bepviet/web",
+    "dev:web": "npm run dev -w @bepviet/web",
+    "dev:api": "npm run dev -w @bepviet/api",
+    "build": "npm run build -w @bepviet/shared && npm run build -w @bepviet/api && npm run build -w @bepviet/web",
+    "lint": "npm run lint -w @bepviet/web && npm run lint -w @bepviet/api",
+    "db:seed": "npm run db:seed -w @bepviet/api"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
