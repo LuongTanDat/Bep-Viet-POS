@@ -1,0 +1,17 @@
+rước khi để Codex sửa mạnh: tạo Git backup
+Mình rất khuyên bạn làm bước này.
+
+Trong terminal gốc:
+git init
+git add .
+git commit -m "Bep Viet POS - ban chay on dinh ban dau"
+
+Nếu Git yêu cầu tên/email, cấu hình một lần:
+
+git config user.name "Luong Tan Dat"
+git config user.email "your-email@example.com"
+
+Sau đó commit lại.
+
+Như vậy nếu Codex sửa xấu hoặc hỏng, bạn có thể xem thay đổi:
+git diff

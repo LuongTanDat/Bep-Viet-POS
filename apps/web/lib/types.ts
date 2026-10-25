@@ -1,0 +1,10 @@
+export type Ban = { id:string; maBan:string; khuVuc:string; soGhe:number; trangThai:string; batDauPhucVuLuc:string|null };
+export type NhomMon = { id:string; ten:string; thuTu:number };
+export type Mon = { id:string; ten:string; moTa:string; gia:number; hinhAnh:string; dangBan:boolean; tramBep:string; nhom:NhomMon; nhom_id:string };
+export type ChiTietDon = { id:string; mon_id:string; soLuong:number; donGia:number; ghiChu:string; mon:Mon };
+export type Don = { id:string; maDon:string; ban:Ban; ban_id:string; nguon:string; trangThai:string; ghiChu:string; phienBan:number; chiTiet:ChiTietDon[]; taoLuc:string; capNhatLuc:string };
+export type ThanhToan = { id:string; soTien:number; phuongThuc:string; trangThai:string; maThamChieu:string; taoLuc:string; don:Don };
+export type DatBan = { id:string; tenKhach:string; soDienThoai:string; soKhach:number; batDauLuc:string; trangThai:string; ban:Ban|null; ban_id:string|null; ghiChu:string };
+export type TonKho = { id:string; tenNguyenLieu:string; donVi:string; soLuong:number; mucToiThieu:number; capNhatLuc:string };
+export type NguoiDung = { id:string; tenDangNhap:string; hoTen:string; vaiTro:string; dangHoatDong:boolean; taoLuc:string };
+export type BaoCao = { doanhThu:number; soDon:number; hoaDonDaThanhToan:number; giaTriTrungBinh:number; banDangPhucVu:number; tongSoBan:number };

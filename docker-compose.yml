@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: bep-viet-pos-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bepviet
+      POSTGRES_USER: bepviet
+      POSTGRES_PASSWORD: bepviet
+    ports:
+      - "5432:5432"
+    volumes:
+      - bep_viet_pos_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bepviet -d bepviet"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  bep_viet_pos_data:
